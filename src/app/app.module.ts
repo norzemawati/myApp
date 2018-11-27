@@ -1,3 +1,6 @@
+import { DetailContactPage } from '../pages/detail-contact/detail-contact';
+import { HttpClientModule } from '@angular/common/http';
+import { People } from '../providers/people/people';
 import { ActionPage } from './../pages/action/action';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,9 +22,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    ActionPage
+    ActionPage,
+    DetailContactPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp, {   //tambah untuk menu atas atau bwh ios dan android
       'iconMode': 'ios',
@@ -39,11 +44,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    ActionPage
+    ActionPage,
+    DetailContactPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    People,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
